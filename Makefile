@@ -1,7 +1,8 @@
+VERSION?=$(shell git describe --tags --abbrev=0)
 BIN_PATH=bin
 BIN_NAME=telegram-sender
-BIN_ARM=$(BIN_NAME)_linux_arm
-BIN_AMD64=$(BIN_NAME)_linux_amd64
+BIN_ARM=$(BIN_NAME)-$(VERSION)-linux-arm
+BIN_AMD64=$(BIN_NAME)-$(VERSION)-linux-amd64
 PACKAGES ?= $(shell go list ./...)
 
 # Go parameters
